@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  php:
+    image: "php:7.3.27-apache"
+    volumes:
+      - ./:/var/www/html/
+    ports: 
+      - 80:80
+    networks:
+      - "front"
+
+  db:
+    image: "rethinkdb:latest"
+    ports:
+      - 8080:8080
+    networks:
+      - "front"
+
+networks:
+  front: {}
