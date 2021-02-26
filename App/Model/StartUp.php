@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Model\DB;
 use App\Model\DBTables;
 
 class StartUp{
@@ -21,6 +22,8 @@ class StartUp{
     }
 
     public function setupDefaultTables(){
+
+        ( new DB )->CheckDBExists( 'ReThunker' );
 
         foreach( $this->defaultTables as $table ){
             ( new DBTables )->CreateTable( $table );
