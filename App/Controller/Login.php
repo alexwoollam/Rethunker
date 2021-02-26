@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\Users\UserCheck;
 
-class Login{
+class Login extends Page{
     
     public function __construct(){
 

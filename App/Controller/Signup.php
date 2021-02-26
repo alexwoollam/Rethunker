@@ -2,7 +2,12 @@
 
 namespace App\Controller;
 
-class Signup{ 
+class Signup extends Page{
+
+    public function submit(){
+
+        echo 'the dolphin';
+    }
 
     public function render(){
         

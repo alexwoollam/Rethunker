@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model\StartUp;
+use App\Router\Page;
 use App\Controller\Login;
 
 class Init{
@@ -11,7 +12,8 @@ class Init{
     {
     
         new StartUp();
-        new Login();
+        ( new Page() )->Routes();
+
     }
 }
 

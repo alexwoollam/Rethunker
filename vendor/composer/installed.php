@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '8c32607f44760bc93c4a3a46c6c3a8d19f986a59',
+    'reference' => 'bd915f34bcd14f6bb82516b80a1000f83a155694',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -18,7 +18,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => '8c32607f44760bc93c4a3a46c6c3a8d19f986a59',
+      'reference' => 'bd915f34bcd14f6bb82516b80a1000f83a155694',
+    ),
+    'bramus/router' => 
+    array (
+      'pretty_version' => '1.5',
+      'version' => '1.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6adc0182dc6b0ebc22fd10543f65a36de10d8c05',
     ),
     'danielmewes/php-rql' => 
     array (
