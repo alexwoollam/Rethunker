@@ -20,6 +20,10 @@ class ComposerStaticInit7181c808c79430d82f9f0a73e9c146c8
             'r\\Tests\\' => 8,
             'r\\' => 2,
         ),
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -52,6 +56,10 @@ class ComposerStaticInit7181c808c79430d82f9f0a73e9c146c8
         'r\\' => 
         array (
             0 => __DIR__ . '/..' . '/danielmewes/php-rql/rdb',
+        ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (

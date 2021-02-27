@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'bd915f34bcd14f6bb82516b80a1000f83a155694',
+    'reference' => 'd3a875c3d13251fc74513b979d7c0cf1ee12cf99',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'bd915f34bcd14f6bb82516b80a1000f83a155694',
+      'reference' => 'd3a875c3d13251fc74513b979d7c0cf1ee12cf99',
     ),
     'bramus/router' => 
     array (
@@ -46,6 +46,15 @@
       array (
       ),
       'reference' => '0f407c43b953d571421e0020ba92082ed5fb7620',
+    ),
+    'filp/whoops' => 
+    array (
+      'pretty_version' => '2.9.2',
+      'version' => '2.9.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'df7933820090489623ce0be5e85c7e693638e536',
     ),
     'larapack/dd' => 
     array (

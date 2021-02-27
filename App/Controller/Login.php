@@ -5,12 +5,6 @@ namespace App\Controller;
 use App\Model\Users\UserCheck;
 
 class Login extends Page{
-    
-    public function __construct(){
-
-        $this->CheckIfThereAreanyUsers();
-        $this->render();
-    }
 
     public function CheckIfThereAreanyUsers(): bool
     {
@@ -18,10 +12,10 @@ class Login extends Page{
         return ( new UserCheck )->NewInstall();
     }
 
-    public function render(){
-        
+    public function Return( $id ){
+
         if( $this->CheckIfThereAreanyUsers() ){
-            require_once( dirname(__FILE__, 2) . '/View/Signup.php' );
+            require_once( dirname(__FILE__, 2) . '/View/Register.php' );
             return;
         }
         require_once( dirname(__FILE__, 2) . '/View/Login.php' );

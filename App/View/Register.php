@@ -1,9 +1,3 @@
-<?php
-
-echo 'Login form.';
-
-?>
-
 <div>
 <form method="post" action="">
     <input name="email" type='text'>Email</input>
