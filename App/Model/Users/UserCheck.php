@@ -21,8 +21,7 @@ class UserCheck extends User{
     {
         $exists 
         = 
-        $this->DB->table
-        ->table('users')
+        $this->DB->table->table('users')
         ->filter(array('email' => $email))
         ->count()
         ->run($this->DB->db);
@@ -35,8 +34,8 @@ class UserCheck extends User{
 
     public function StoredToken( $email ): string
     {
-        $token = $this->DB->table
-        ->table('users')
+        $token = 
+        $this->DB->table->table('users')
         ->get($email)
         ->run($this->DB->db);
         $token = $token['password'];

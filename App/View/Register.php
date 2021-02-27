@@ -1,9 +1,11 @@
 <div>
-<form method="post" action="">
-    <input name="email" type='text'>Email</input>
-    <br/>
-    <input name="password" type='text'>Password</input>
-    <br/>
-    <button type='submit'>Submit</button>
-</form>
+    <form method="post" action="">
+        <input name="email" type='text'>Email</input>
+        <br/>
+        <input name="name" type="text">Name</input>
+        <br/>
+        <input name="password" type='password'>Password</input>
+        <br/>
+        <button type='submit'>Submit</button>
+    </form>
 </div>
