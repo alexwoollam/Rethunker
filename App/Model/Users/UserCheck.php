@@ -4,6 +4,7 @@ namespace App\Model\Users;
 
 use App\Model\DB;
 use r as rethink;
+use App\Security\Hash;
 
 class UserCheck extends User{
  
@@ -32,9 +33,22 @@ class UserCheck extends User{
         return false;
     }
 
-    public function Token( $token ): bool
+    public function StoredToken( $email ): string
     {
-        if( 'this' == 'that' ){
+        $token = $this->DB->table
+        ->table('users')
+        ->get($email)
+        ->run($this->DB->db);
+        $token = $token['password'];
+        return $token;
+    }
+
+    public function TokenCheck( $token, $password ): bool
+    {
+
+        $token = ( new Hash )->decrypt( $token );
+        
+        if( $token == $password ){
             return true;
         };
         return false;

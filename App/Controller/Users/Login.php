@@ -10,13 +10,14 @@ class Login{
     public $password;
 
     public function __construct( $data )
-    {
-        echo 'loging in...';
-        
+    {   
         $this->email = $data['email'];
         $this->password = $data['password'];
 
-        $this->CheckUserExists();
+        if( $this->CheckUserExists() ){
+            $stored_token = $this->GetStoredToken();
+            $this->CheckUserToken( $stored_token );
+        };
     }
 
     public function CheckUserExists(): bool
@@ -33,14 +34,21 @@ class Login{
         return false;
     }
 
-    public function CheckUserToken(): bool
+    public function GetStoredToken(): string
+    {
+        return ( new UserCheck )->StoredToken( $this->email );
+
+    }
+
+    public function CheckUserToken( $stored_token ): bool
     {
         $valid = false;
-        $valid = ( new UserCheck )->Token( $this->password );
+        $valid = ( new UserCheck )->TokenCheck( $stored_token, $this->password );
         
         if ($valid) {
             return true;
         }
+        return false;
     }
 
 }

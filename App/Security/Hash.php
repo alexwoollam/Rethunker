@@ -24,7 +24,7 @@ class Hash{
 
     public function encrypt(string $email): string
     {
-
+        
         $key = $this->loadEncryptionKeyFromConfig();
         $encoder = Crypto::encrypt($email, $key);
         return( $encoder );
