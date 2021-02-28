@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'b3c3c39a703b849e9c4fad5a3eb878863b634b1e',
+    'reference' => 'd84aade726a4d4a3120865f0a62b7a265839a819',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'b3c3c39a703b849e9c4fad5a3eb878863b634b1e',
+      'reference' => 'd84aade726a4d4a3120865f0a62b7a265839a819',
     ),
     'bramus/router' => 
     array (
@@ -95,6 +95,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.3.0',
+      'version' => '6.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
     ),
     'psr/log' => 
     array (

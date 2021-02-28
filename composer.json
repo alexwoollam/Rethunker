@@ -6,7 +6,8 @@
         "larapack/dd": "^1.1",
         "defuse/php-encryption": "^2.2",
         "bramus/router": "^1.5",
-        "filp/whoops": "^2.9"
+        "filp/whoops": "^2.9",
+        "phpmailer/phpmailer": "^6.3"
     },
     "authors": [
         {
