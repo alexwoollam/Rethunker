@@ -32,18 +32,9 @@ class Page extends Route {
             ( new Register($_POST) )->User();
         });
 
-        $route->get('/dashboard', function($data = null) { 
-            new \App\Controller\Standard( null, null );
+        $route->get('/dashboard', function() { 
+            new \App\Controller\Dashboard( $id, null );
         });
-
-
-      
-
-        $route->get('/test', function($data = null) {
-            $data = array('to' => 'test@test.com', 'name' => 'Test User', 'subject' => 'Password reset', 'body' => 'this is some content' );
-            ( new Mail($data) )->Send();
-        });
-        
 
         $route->get('/([a-z0-9-]+)', function($id) use ($router) { 
             new \App\Controller\Standard( $id, null );

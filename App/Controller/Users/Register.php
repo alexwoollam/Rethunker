@@ -4,6 +4,7 @@ namespace App\Controller\Users;
 
 use App\Model\Users\UserNew;
 use App\Security\Hash;
+use App\Controller\Mail;
 
 class Register extends Login{
 
@@ -17,16 +18,25 @@ class Register extends Login{
 
     public function RegisterUser()
     {
-        var_dump('registering...');
-
+        
         try{
             ( new UserNew )->RegisterEmail( $this->email, $this->PasswordHash, $this->name );
+            
+            $welcome_email = [
+                'to' => $this->email, 
+                'name' => $this->name , 
+                'subject' => 'Welcome to ReCMS', 
+                'body' => 'Welcome to ReCMS ' . $this->name, 
+            ];
+            ( new Mail($welcome_email) )->Send();
+            
         } catch(Exception $err) {
             dd('couldn\'t register.');
         }
     }
 
     public function HashPassword(){
+
         return ( new Hash )->encrypt( $this->password );
     }
 }

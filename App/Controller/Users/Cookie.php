@@ -18,11 +18,13 @@ class Cookie{
     }
 
     public function UserIsLoggedIn(){
+
         $this->CheckCookie();
         return $this->user_is_logged_in;
     }
 
     public function UserLoggedIn(){
+
         $this->CheckCookie();
         return $this->logged_in_user;
     }
@@ -39,6 +41,7 @@ class Cookie{
     }
 
     public function KillCookie(){
+        
         if (isset($_COOKIE['ReCMS_User'])) {
             unset($_COOKIE['ReCMS_User']); 
             setcookie('ReCMS_User', null, -1, '/'); 

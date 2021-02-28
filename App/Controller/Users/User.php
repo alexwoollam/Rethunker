@@ -14,4 +14,10 @@ class User{
         $user_arr = (new UserGet)->Data( ( new Cookie )->UserLoggedIn() );
         return $user_arr['name'];
     }
+
+    public function GetEmail(){
+
+        $user_arr = (new UserGet)->Data( ( new Cookie )->UserLoggedIn() );
+        return $user_arr['email'];
+    }
 }

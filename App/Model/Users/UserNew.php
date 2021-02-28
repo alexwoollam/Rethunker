@@ -15,10 +15,8 @@ class UserNew extends User{
                 'password'=>$password,
             ];
             $this->DB->table->table('users')->insert($user)->run($this->DB->db);
-            dd( 'User added' );
             return true;
         }
-        dd( 'user exists' );
         return false;
     }
 }
