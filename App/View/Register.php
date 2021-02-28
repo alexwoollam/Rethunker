@@ -1,11 +1,17 @@
-<div>
+<div class="container mt-5 w-25">
+    <div class="logo mb-5"></div>
     <form method="post" action="">
-        <input name="email" type='text'>Email</input>
-        <br/>
-        <input name="name" type="text">Name</input>
-        <br/>
-        <input name="password" type='password'>Password</input>
-        <br/>
-        <button type='submit'>Submit</button>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" name="email" placeholder="email" type='text'>
+            <br/>
+            <label for="name">Name</label>
+            <input class="form-control" id="name" placeholder="name" name="name" type="text">
+            <br/>
+            <label for="password">Password</label>
+            <input class="form-control" id="password" placeholder="password" name="password" type='password'>
+            <br/>
+            <button class="btn btn-primary" type='submit'>Submit</button>
+        </div>
     </form>
 </div>

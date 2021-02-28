@@ -1,0 +1,25 @@
+{
+  "name": "recms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexwoollam/Rethunker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexwoollam/Rethunker/issues"
+  },
+  "homepage": "https://github.com/alexwoollam/Rethunker#readme",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-sass": "^4.1.0"
+  }
+}

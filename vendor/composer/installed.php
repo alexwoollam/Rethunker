@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'd3a875c3d13251fc74513b979d7c0cf1ee12cf99',
+    'reference' => 'fbdf4e6585f61eccf4c6c54a5523be44c0e04c1b',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'd3a875c3d13251fc74513b979d7c0cf1ee12cf99',
+      'reference' => 'fbdf4e6585f61eccf4c6c54a5523be44c0e04c1b',
     ),
     'bramus/router' => 
     array (
@@ -125,6 +125,22 @@
       array (
       ),
       'reference' => '72ca213014a92223a5d18651ce79ef441c12b694',
+    ),
+    'twbs/bootstrap' => 
+    array (
+      'pretty_version' => 'v4.6.0',
+      'version' => '4.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6ffb0b48e455430f8a5359ed689ad64c1143fac2',
+    ),
+    'twitter/bootstrap' => 
+    array (
+      'replaced' => 
+      array (
+        0 => 'v4.6.0',
+      ),
     ),
   ),
 );

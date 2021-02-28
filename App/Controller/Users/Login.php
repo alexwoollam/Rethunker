@@ -3,21 +3,41 @@
 namespace App\Controller\Users;
 
 use App\Model\Users\UserCheck;
+use App\Controller\Users\Cookie;
 
 class Login{
 
     public $email;
     public $password;
+    public $name;
+
+    public $email_exists;
+    public $authenticate = false;
 
     public function __construct( $data )
     {   
         $this->email = $data['email'];
         $this->password = $data['password'];
+        $this->name = $data['name'];
 
-        if( $this->CheckUserExists() ){
+        $this->email_exists = $this->CheckUserExists();
+        if( $this->email_exists ){
             $stored_token = $this->GetStoredToken();
-            $this->CheckUserToken( $stored_token );
+            $this->authenticate = $this->CheckUserToken( $stored_token );
         };
+
+        $data = [
+            'email' => $this->email_exists,
+            'sent_email' => $this->email,
+            'authenticated' => $this->authenticate
+        ];
+
+        if ($this->authenticate) {
+            ( new Cookie )->AddCookie( $this->email );
+            $host  = $_SERVER['HTTP_HOST'];
+            header("Location: http://$host/");
+        }
+        new \App\Controller\Login( 'login', $data );
     }
 
     public function CheckUserExists(): bool
@@ -25,8 +45,6 @@ class Login{
         $valid = false;
         if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $valid = ( new UserCheck )->WithEmail( $this->email );
-        } else {
-            dd('not a valid email');
         }
         if ($valid) {
             return true;

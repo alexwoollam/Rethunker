@@ -20,9 +20,9 @@ class Register extends Login{
         var_dump('registering...');
 
         try{
-            ( new UserNew )->RegisterEmail( $this->email, $this->PasswordHash );
+            ( new UserNew )->RegisterEmail( $this->email, $this->PasswordHash, $this->name );
         } catch(Exception $err) {
-            dd('could register.');
+            dd('couldn\'t register.');
         }
     }
 

@@ -12,8 +12,8 @@ class Login extends Page{
         return ( new UserCheck )->NewInstall();
     }
 
-    public function Return( $id ){
-
+    public function Return( $id, $post ){
+        
         if( $this->CheckIfThereAreanyUsers() ){
             require_once( dirname(__FILE__, 2) . '/View/Register.php' );
             return;
