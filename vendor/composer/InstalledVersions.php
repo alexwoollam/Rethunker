@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'fbdf4e6585f61eccf4c6c54a5523be44c0e04c1b',
+    'reference' => 'b3c3c39a703b849e9c4fad5a3eb878863b634b1e',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'fbdf4e6585f61eccf4c6c54a5523be44c0e04c1b',
+      'reference' => 'b3c3c39a703b849e9c4fad5a3eb878863b634b1e',
     ),
     'bramus/router' => 
     array (
@@ -138,22 +138,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '72ca213014a92223a5d18651ce79ef441c12b694',
-    ),
-    'twbs/bootstrap' => 
-    array (
-      'pretty_version' => 'v4.6.0',
-      'version' => '4.6.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '6ffb0b48e455430f8a5359ed689ad64c1143fac2',
-    ),
-    'twitter/bootstrap' => 
-    array (
-      'replaced' => 
-      array (
-        0 => 'v4.6.0',
-      ),
     ),
   ),
 );
