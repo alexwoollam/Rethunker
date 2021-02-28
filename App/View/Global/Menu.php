@@ -38,6 +38,9 @@ if($user_is_logged_in){
       </li>
       <?php } ?>
       <?php if( $user_is_logged_in ){ ?>
+      <li class="nav-item <?php currentPage('/dashboard');?>" >
+        <a class="nav-link" href="/dashboard">Dashboard</a>
+      </li>
       <li class="nav-item <?php currentPage('/logout');?>" >
         <a class="nav-link" href="/logout">Logout</a>
       </li>

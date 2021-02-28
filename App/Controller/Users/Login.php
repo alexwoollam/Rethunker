@@ -35,7 +35,7 @@ class Login{
         if ($this->authenticate) {
             ( new Cookie )->AddCookie( $this->email );
             $host  = $_SERVER['HTTP_HOST'];
-            header("Location: http://$host/");
+            header("Location: http://$host/dashboard");
         }
         new \App\Controller\Login( 'login', $data );
     }

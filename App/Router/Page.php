@@ -31,6 +31,10 @@ class Page extends Route {
             ( new Register($_POST) )->User();
         });
 
+        $route->get('/dashboard', function($data = null) { 
+            new \App\Controller\Standard( null, null );
+        });
+
         $route->get('/([a-z0-9-]+)', function($id) use ($router) { 
             new \App\Controller\Standard( $id, null );
         });
