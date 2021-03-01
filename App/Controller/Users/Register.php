@@ -31,7 +31,7 @@ class Register extends Login{
             ( new Mail($welcome_email) )->Send();
             
         } catch(Exception $err) {
-            dd('couldn\'t register.');
+            //dd('couldn\'t register.');
         }
     }
 

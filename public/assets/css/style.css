@@ -7,4 +7,20 @@
   min-width: 150px;
   max-width: 150px;
   height: 150px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: block;
+  padding-top: 40px; }
+  .logo:before {
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    color: white;
+    text-align: center;
+    font-size: 55px;
+    margin: auto;
+    display: block; }
+
+.login:before {
+  content: "\f502"; }
+
+.register:before {
+  content: "\f4ff"; }

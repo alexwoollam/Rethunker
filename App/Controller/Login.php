@@ -14,10 +14,7 @@ class Login extends Page{
 
     public function Return( $id, $post ){
         
-        if( $this->CheckIfThereAreanyUsers() ){
-            require_once( dirname(__FILE__, 2) . '/View/Register.php' );
-            return;
-        }
+        $no_users = $this->CheckIfThereAreanyUsers();
         require_once( dirname(__FILE__, 2) . '/View/Login.php' );
         return;
     }

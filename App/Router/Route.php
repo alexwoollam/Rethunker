@@ -13,7 +13,14 @@ class Route{
             $this->router = new Router();
         }
 
+        public function Routes(){
+      
+            ( new Api )->Routes();
+            ( new Admin )->Routes();
+            ( new Page )->Routes();
+        }
+
         public function __destruct(){
-            $this->router->run();
+           // $this->router->run();
         }
 }

@@ -12,6 +12,8 @@ class Admin extends Route {
         $route->get('/admin', function() {
             return new \App\Controller\Login( 'login' );
         });
+
+        $route->run();
     }
 
 }

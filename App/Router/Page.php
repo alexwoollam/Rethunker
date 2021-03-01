@@ -36,13 +36,19 @@ class Page extends Route {
             new \App\Controller\Dashboard( $id, null );
         });
 
+        $route->get('/page-edit', function() {
+            new \App\Controller\PageEdit( 0, null );
+        });
+        
         $route->get('/([a-z0-9-]+)', function($id) use ($router) { 
             new \App\Controller\Standard( $id, null );
         });
-
+        
         $route->get('/', function() { 
             new \App\Controller\Home( $id, null );
         });
+
+        $route->run();
    
     }
 
