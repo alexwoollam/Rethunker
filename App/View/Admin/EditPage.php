@@ -1,12 +1,16 @@
 <?php 
+
+use App\Boot;
 use App\Controller\Api\Pages\Get;
 use App\Controller\Users\User;
 use App\Helpers\Log;
 
 ( new Log )->Info('...Testing error logger.');
 
+global $container;
+
 $get = new Get();
-$pages = $get->All();
+$pages = $container['ReCMS.Fields.Pages'];
 $pagecount = $get->Count();
 $editing_page = 99;
 $new_page = true;

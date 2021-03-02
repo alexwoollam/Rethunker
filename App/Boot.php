@@ -5,6 +5,8 @@ namespace App;
 use App\Model\StartUp;
 use App\Router\Route;
 use App\Controller\Mail;
+use Pimple\Container;
+use App\Helpers\Pimple\Provider;
 use App\Controller\Login;
 use App\Controller\Users\Cookie;
 
@@ -25,7 +27,10 @@ class Boot
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
         $whoops->register();
 
+        global $container;
+        $container = new Container;
         new StartUp();
+        ( new Provider() )->register($container);
         ( new Cookie() )->CheckCookie();
         ( new Route() )->Routes();
     }
