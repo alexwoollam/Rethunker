@@ -4,7 +4,6 @@ namespace App\Router;
 use App\Controller\Users\Login;
 use App\Controller\Users\Register;
 use App\Controller\Users\Logout;
-use App\Controller\Mail;
 
 class Page extends Route {
 

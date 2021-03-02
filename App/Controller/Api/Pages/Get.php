@@ -7,13 +7,29 @@ use App\Model\Api\Pages\Fetch;
 
 class Get extends Pages{
 
-    public function WithId(){
-       
-        echo( 'id: ' . $this->page_id );
+    public function Count(){
+        return ( new Check )->PageCount();
     }
 
-    public function All(){
+    public function WithId( $id=0 ){
+       
+        return ( new Fetch )->WithId($id);
+    }
 
-        return['all'];
+    public function All(): array
+    {
+        $ids = [];
+        $page_array = [];
+      
+        for ($i = 0; $i <= $this->Count(); ++$i) {
+            $ids[] = $i;
+        }
+
+        foreach( $ids as $id ){
+            $storage = $this->WithId( $id );
+            $page_array[] = $storage;
+        }
+
+        return $page_array;
     }
 }

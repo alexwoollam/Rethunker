@@ -19,8 +19,4 @@ class Route{
             ( new Admin )->Routes();
             ( new Page )->Routes();
         }
-
-        public function __destruct(){
-           // $this->router->run();
-        }
 }

@@ -1,19 +1,19 @@
 <?php 
 use App\Controller\Api\Pages\Get;
+use App\Controller\Users\User;
 
-$pages = ( new Get('all') )->All();
-
-$current_page = [
-    'title' => 'Page title here',
-    'content' => 'this is some page content',
-    'uri' => '/temp-page',
-    'publish_date' => date( 'now' ),
-    'update_date' => date( 'now' ),
-    'id' => '1'
-];
+$get = new Get();
+$pages = $get->All();
+$pagecount = $get->Count();
+$editing_page = 99;
+$new_page = true;
+if(isset($_GET["id"])){
+    $new_page = false;
+    $editing_page = intval($_GET["id"]);
+}
+$current_page = $get->WithId($editing_page);
 
 ?>
-
 
 <div class="container-fluid d-flex" style="background-color: #f2f2f2; min-height: calc( 100vh - 56px );">
     <div class="row align-items-start w-100" style="min-height: calc( 100vh - 56px );">
@@ -21,29 +21,40 @@ $current_page = [
             <div class="nav navbar-primary bg-primary">
                 <div class="ul" class="navbar-nav ml-auto">
                     <h4 style="color: white">Pages:</h4>
-                
-                    <li class="nav-item <?php currentPage('/page-edit');?>" >
-                        <a class="nav-link" href="" style="color: white">Page title here</a>
-                    </li>
+                        <?php foreach($pages as $page) {
+                            ?>
+                                <li class="nav-item <?php currentPage('/page-edit?id='.$page['id']);?>" >
+                                    <a class="nav-link" href="<?php echo '/page-edit?id='.$page['id']?>" style="color: white">
+                                        <?php echo $page['title'] ?>
+                                        <?php if( $page['status'] === 'draft' ){ echo '(draft)'; }?>
+                                    </a>
+                                </li>
+                            <?php
+                        }                        
+                        ?>
+                    
                 </div>
             </div>
         </div>
         <div class="col p-5" style="min-height: calc( 100vh - 56px );">
-            <form class="bg-light p-5">
+            <form class="bg-light p-5" method="post" action="<?php if($new_page){echo '/api/page/new/'; }else{ echo '/api/page/update/'; };?>">
                 <div class="mb-3">
                     <label for="page_title" class="form-label">Page Title</label>
-                    <input type="text" class="form-control" id="page_title" value="<?php echo $current_page['title'] ?>" aria-describedby="emailHelp">
+                    <input name="title" type="text" class="form-control" id="page_title" value="<?php echo $current_page['title'] ?>" aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text">This is the title for your page.</div>
+                </div>
 
                 <div class="mb-3">
                     <label for="page_content" class="form-label">Page Content</label>
-                    <textarea type="text" class="form-control" id="page_content"><?php echo $current_page['content'] ?></textarea>
+                    <textarea name="content" type="text" class="form-control" id="page_content"><?php echo $current_page['content'] ?></textarea>
                 </div>
                 
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <input name="status" <?php if( $current_page['status'] === "published" ){ echo "checked='true'"; } ?> type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Publish?</label>
                 </div>
+                <input type="hidden" name="current_user" value="<?php echo (new User)->GetEmail(); ?>">
+                <input type="hidden" name="id" value="<?php echo $current_page['id']?>">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
