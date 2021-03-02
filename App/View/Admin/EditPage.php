@@ -1,6 +1,9 @@
 <?php 
 use App\Controller\Api\Pages\Get;
 use App\Controller\Users\User;
+use App\Helpers\Log;
+
+( new Log )->Info('...Testing error logger.');
 
 $get = new Get();
 $pages = $get->All();

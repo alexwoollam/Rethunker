@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'd84aade726a4d4a3120865f0a62b7a265839a819',
+    'reference' => '63d7f113411d38cd535ad40120ec1d8d758821e3',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'd84aade726a4d4a3120865f0a62b7a265839a819',
+      'reference' => '63d7f113411d38cd535ad40120ec1d8d758821e3',
     ),
     'bramus/router' => 
     array (

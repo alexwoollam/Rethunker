@@ -1,2 +1,3 @@
 FROM php:7.3.27-apache
 RUN a2enmod rewrite && service apache2 restart
+RUN mkdir -p /var/www/html/logs && chown -R www-data:www-data /var/www/html/logs
