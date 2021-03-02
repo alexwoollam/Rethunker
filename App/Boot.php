@@ -8,20 +8,26 @@ use App\Controller\Mail;
 use App\Controller\Login;
 use App\Controller\Users\Cookie;
 
-class Init{
+/**
+ * Boot class
+ * First class called.
+ */
+class Boot
+{
 
+    /**
+     * Initiation constructor, initiates the framework.
+     */
     public function __construct()
     {
 
         $whoops = new \Whoops\Run;
-        $whoops->nopushHandler(new \Whoops\Handler\PrettyPageHandler);
+        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
         $whoops->register();
 
         new StartUp();
         ( new Cookie() )->CheckCookie();
         ( new Route() )->Routes();
-
     }
 }
-
-new Init();
+new Boot();

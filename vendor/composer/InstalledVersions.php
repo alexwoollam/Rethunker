@@ -19,7 +19,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '63d7f113411d38cd535ad40120ec1d8d758821e3',
+    'reference' => 'd30386a14cb0b8fa08f9f74ab93ba6cb514ae1cd',
     'name' => 'alex/rethunker',
   ),
   'versions' => 
@@ -31,7 +31,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '63d7f113411d38cd535ad40120ec1d8d758821e3',
+      'reference' => 'd30386a14cb0b8fa08f9f74ab93ba6cb514ae1cd',
     ),
     'bramus/router' => 
     array (
@@ -104,6 +104,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
+    ),
+    'pimple/pimple' => 
+    array (
+      'pretty_version' => 'v3.3.1',
+      'version' => '3.3.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '21e45061c3429b1e06233475cc0e1f6fc774d5b0',
+    ),
+    'psr/container' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
     ),
     'psr/log' => 
     array (

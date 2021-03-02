@@ -33,6 +33,7 @@ class ComposerStaticInit7181c808c79430d82f9f0a73e9c146c8
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
@@ -78,6 +79,10 @@ class ComposerStaticInit7181c808c79430d82f9f0a73e9c146c8
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
@@ -97,6 +102,13 @@ class ComposerStaticInit7181c808c79430d82f9f0a73e9c146c8
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
+        ),
         'B' => 
         array (
             'Bramus' => 

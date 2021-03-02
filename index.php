@@ -1,6 +1,4 @@
 <?php
 
 require_once( './vendor/autoload.php' );
-
-
-require_once( './App/Init.php' );
+require_once( './App/Boot.php' );
