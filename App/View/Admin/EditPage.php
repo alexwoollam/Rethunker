@@ -17,10 +17,10 @@ $current_page = $get->WithId($editing_page);
 
 <div class="container-fluid d-flex" style="background-color: #f2f2f2; min-height: calc( 100vh - 56px );">
     <div class="row align-items-start w-100" style="min-height: calc( 100vh - 56px );">
+        <?php if($pagecount > 0):?>
         <div class="p-4 col-2 bg-primary h-100">
             <div class="nav navbar-primary bg-primary">
                 <div class="ul" class="navbar-nav ml-auto">
-                    <h4 style="color: white">Pages:</h4>
                         <?php foreach($pages as $page) {
                             ?>
                                 <li class="nav-item <?php currentPage('/page-edit?id='.$page['id']);?>" >
@@ -36,8 +36,15 @@ $current_page = $get->WithId($editing_page);
                 </div>
             </div>
         </div>
+        <?php endif; ?>
         <div class="col p-5" style="min-height: calc( 100vh - 56px );">
             <form class="bg-light p-5" method="post" action="<?php if($new_page){echo '/api/page/new/'; }else{ echo '/api/page/update/'; };?>">
+                <?php if($new_page){ 
+                    echo '<h2>New Page</h2>'; 
+                }else{
+                    echo '<h2>Editing \''.$current_page['title'].'\'</h2>';
+                }
+                ?>
                 <div class="mb-3">
                     <label for="page_title" class="form-label">Page Title</label>
                     <input name="title" type="text" class="form-control" id="page_title" value="<?php echo $current_page['title'] ?>" aria-describedby="emailHelp">
