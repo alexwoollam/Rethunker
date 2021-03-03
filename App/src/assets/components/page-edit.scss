@@ -1,0 +1,12 @@
+.admin-sidebar{
+    & .ul{
+        & .nav-link{
+            color: rgba(255, 255, 255, 0.685);
+        }
+        & .active{
+            & .nav-link{
+                color: white;
+            }
+        }
+    }
+}

@@ -11,12 +11,17 @@ class Provider implements ServiceProviderInterface
 
     public function register(Container $container)
     {
-        $container['ReCMS.Fields.Pages'] = function () 
+        $container['ReCMS.Pages'] = function () 
         {
             return ( new Get )->All();
         };
 
-        $container['ReCMS.Fields.Users'] = function () 
+        $container['ReCMS.Pages.Count'] = function () 
+        {
+            return ( new Get )->Count();
+        };
+
+        $container['ReCMS.Users'] = function () 
         {
             return ['test'=>'test'];
         };
