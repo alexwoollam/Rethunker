@@ -1,5 +1,6 @@
 {
     "name": "alex/rethunker",
+    "description": "a simple CMS",
     "require": {
         "danielmewes/php-rql": "^2.3",
         "monolog/monolog": "^2.2",
