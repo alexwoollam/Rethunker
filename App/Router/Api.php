@@ -26,6 +26,10 @@ class Api extends Route{
             (new Set())->Update($_POST);
         });
 
+        $route->post('/api/page/delete/', function($data=null) {
+            (new Set())->Delete($_POST);
+        });
+
         $route->get('/api/pages', function() {
             ( new Get('all') )->All();
         });

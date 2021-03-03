@@ -54,8 +54,20 @@ use App\Helpers\Functions;
                 </div>
                 <input type="hidden" name="current_user" value="<?php echo $data['current_user'] ?>">
                 <input type="hidden" name="id" value="<?php echo $data['current_page']['id']?>">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"><?php if($data['new_page']){ 
+                    echo 'Add page'; 
+                }else{
+                    echo 'Update page';
+                }
+                ?></button>
             </form>
+
+            <form method="post" action="/api/page/delete/">
+                    <input type="hidden" name="id" value="<?php echo $data['current_page']['id']?>">
+                    <button type="submit" class="btn btn-danger">Delete page</button>
+            </form>
+
+            
         </div>
     </div>
 </div>

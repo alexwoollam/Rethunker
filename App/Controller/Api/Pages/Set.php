@@ -6,6 +6,7 @@ namespace App\Controller\Api\Pages;
 
 use App\Model\Api\Pages\PageNew;
 use App\Model\Api\Pages\PageUpdate;
+use App\Model\Api\Pages\Delete;
 
 class Set extends Pages{
 
@@ -16,7 +17,11 @@ class Set extends Pages{
         $title = $post['title'];
         $content = $post['content'];
         $user = $post['current_user'];
-        $status = $post['status'];
+        $status = 'draft';
+        if ($post['status']) {
+            $status = $post['status'];
+        }
+        
         (new PageNew )->Add( $title, $content, $user, $status);
 
     }
@@ -32,5 +37,12 @@ class Set extends Pages{
         $title = $post['title'];
         $content = $post['content'];
         (new PageUpdate )->Add( $id, $title, $content, $status);
+    }
+
+    public function Delete($post): void
+    {
+
+        $id = intval($post['id']);
+        ( new Delete )->Page( $id );
     }
 }
