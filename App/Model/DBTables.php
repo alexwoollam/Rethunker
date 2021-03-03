@@ -5,6 +5,7 @@ declare(strict_types=1); # -*- coding: utf-8 -*-
 namespace App\Model;
 
 use r as rethink;
+use App\Helpers\Log;
 
 class DBTables extends DB{
 
@@ -31,7 +32,8 @@ class DBTables extends DB{
         try{
             $this->table->table($table)->insert($someContent)->run($this->db);
             return true;
-        } catch ( Exception $err ) {
+        } catch ( \Exception $err ) {
+            ( new Log )->error( "Table insert failed, error message: " . $err );
             return false;
         }
         

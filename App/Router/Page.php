@@ -35,18 +35,18 @@ class Page extends Route {
         });
 
         $route->get('/dashboard', function() { 
-            new \App\Controller\Dashboard( $id, null );
+            new \App\Controller\Dashboard( 'dash', null );
         });
 
         $route->get('/page-edit', function() {
             new \App\Controller\PageEdit( 0, null );
         });
         
-        $route->get('/([a-z0-9-]+)', function($id) use ($router) { 
+        $route->get('/([a-z0-9-]+)', function($id) use ($route) { 
             new \App\Controller\Standard( $id, null );
         });
         
-        $route->get('/', function() { 
+        $route->get('/', function($id) { 
             new \App\Controller\Home( $id, null );
         });
 

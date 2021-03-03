@@ -6,7 +6,7 @@ namespace App\Controller;
 
 class Standard extends Page implements PageInterface{
    
-    public function Return( $id ){
+    public function Return( $id, $post ){
 
         echo 'Page requested: ' . $id;
     }

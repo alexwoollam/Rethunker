@@ -6,8 +6,8 @@ namespace App\Controller;
 
 class Home extends Page implements PageInterface{
 
-    public function Return( $id ){
+    public function Return( $id, $post ){
+
         echo 'homepage';
-        
     }
 }

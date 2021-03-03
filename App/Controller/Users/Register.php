@@ -7,6 +7,7 @@ namespace App\Controller\Users;
 use App\Model\Users\UserNew;
 use App\Security\Hash;
 use App\Controller\Mail;
+use App\Helpers\Log;
 
 class Register extends Login{
 
@@ -32,8 +33,8 @@ class Register extends Login{
             ];
             ( new Mail($welcome_email) )->Send();
             
-        } catch(Exception $err) {
-            //dd('couldn\'t register.');
+        } catch( \Exception $err) {
+            ( new Log )->error( 'Error Registering User: '.$err );
         }
     }
 

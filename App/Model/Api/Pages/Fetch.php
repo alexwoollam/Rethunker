@@ -8,16 +8,14 @@ use App\Controller\Users\User;
 
 class Fetch extends Pages{
 
-    public function AllPages(){
+    public function AllPages(): array
+    {
 
-        
-    
-        return $this->DB->table->table('pages')->orderBy(['index' => 'id'])->run($this->DB->db);
-
-        
+        return $this->DB->table->table('pages')->orderBy(['index' => 'id'])->run($this->DB->db);        
     }
 
-    public function WithId($id){
+    public function WithId($id): ?object
+    {
 
         return $this->DB->table->table('pages')->get($id)->run($this->DB->db);
     }

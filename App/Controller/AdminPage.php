@@ -14,6 +14,17 @@ class AdminPage{
         require_once( dirname(__FILE__, 2) . '/View/Global/Menu.php' );
         $this->Return( $id, $post );
     }
+
+    public function View( $path, $data ){
+
+        ob_start();
+        include( dirname(__FILE__, 2) . '/View/'. $path . '.php' );
+        $buffer = ob_get_contents();
+		@ob_end_clean();
+		echo $buffer;
+        $data = null;
+    }
+
     public function __destruct(){
         require_once( dirname(__FILE__, 2) . '/View/Global/Footer.php' );
     }

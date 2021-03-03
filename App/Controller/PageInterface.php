@@ -6,5 +6,5 @@ namespace App\Controller;
 
 Interface PageInterface{
 
-    public function Return( $id );
+    public function Return( $id, $post );
 }

@@ -5,6 +5,7 @@ declare(strict_types=1); # -*- coding: utf-8 -*-
 namespace App\Model\Api\Pages;
 
 use App\Controller\Users\User;
+use App\Helpers\Log;
 
 class PageUpdate extends Pages{
 
@@ -21,8 +22,8 @@ class PageUpdate extends Pages{
             $this->DB->table->table('pages')->get($id)->update($page)->run($this->DB->db);
             header("Location: {$_SERVER['HTTP_REFERER']}");
             exit;
-        } catch( Exception $err ){
-
+        } catch( \Exception $err ){
+            ( new Log )->error( "Page update failed, error message: " . $err );
         }       
     }
 }

@@ -26,5 +26,8 @@
     "scripts": {
         "dev": "rm -rf ./composer.lock ./vendor/ && composer update",
         "build": "rm -rf ./composer.lock ./vendor/ && composer update --no-dev"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^4.6"
     }
 }

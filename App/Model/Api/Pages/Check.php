@@ -15,7 +15,7 @@ class Check extends Pages{
         return false;
     }
 
-    public function PageCount(): int
+    public function PageCount(): float
     {
         return $this->DB->table->table('pages')->count()->run($this->DB->db);
     }

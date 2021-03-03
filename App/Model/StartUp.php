@@ -11,7 +11,8 @@ class StartUp{
     
     public $defaultTables;
 
-    public function __construct(){
+    public function __construct()
+    {
 
         $this->defaultTables = [
             'options',
@@ -23,13 +24,15 @@ class StartUp{
         $this->setupDefaultTables();
     }
 
-    public function setupDefaultTables(){
+    public function setupDefaultTables(): void
+    {
 
         ( new DB )->CheckDBExists( 'ReThunker' );
 
         foreach( $this->defaultTables as $table ){
             ( new DBTables )->CreateTable( $table );
         }
+        return;
     }
 
 }

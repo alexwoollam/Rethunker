@@ -14,7 +14,7 @@ class Api extends Route{
 
         $route = $this->router;
 
-        $route->get('/api/page/([a-z0-9-]+)', function($id) use ($router) {
+        $route->get('/api/page/([a-z0-9-]+)', function($id) use ($route) {
             ( new Get($id) )->WithId();
         });
 
