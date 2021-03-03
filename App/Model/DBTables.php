@@ -25,7 +25,7 @@ class DBTables extends DB{
         return false;
     }
 
-    public function Insert( string $table, array $insert ): boolean
+    public function Insert( string $table, array $insert ): bool
     {
 
         try{
