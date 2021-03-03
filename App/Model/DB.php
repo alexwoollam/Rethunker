@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1); # -*- coding: utf-8 -*-
+
 namespace App\Model;
 
 use r as rethink;
